@@ -1,0 +1,194 @@
+  <head>
+    <meta charset="UTF-8">
+    <title>Ce este HTML?</title>
+    <style>
+      :root {
+        --bg: #f4f4f4;
+        --text: #000000;
+        --card: #ffffff;
+        --accent: #2c3e50;
+        --code-bg: #ecf0f1;
+        --link: #2980b9;
+        --link-hover: #1abc9c;
+      }
+
+      body.dark-mode {
+        --bg: #1e1e1e;
+        --text: #ffffff;
+        --card: #2b2b2b;
+        --accent: #1abc9c;
+        --code-bg: #333333;
+        --link: #00bcd4;
+        --link-hover: #80deea;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s ease;
+      }
+      header {
+        background-color: var(--accent);
+        color: white;
+        padding: 20px;
+        text-align: center;
+      }
+      main {
+        max-width: 900px;
+        margin: auto;
+        background-color: var(--card);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+        animation: slideIn 0.8s ease-in-out;
+      }
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes pop {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      .animated-result {
+        animation: pop 0.4s ease-in-out;
+      }
+      code {
+        display: block;
+        white-space: pre;
+        background-color: var(--code-bg);
+        padding: 10px;
+        border-radius: 5px;
+        font-family: Consolas, monospace;
+        margin-bottom: 10px;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        color: var(--link-hover);
+      }
+      .mode-toggle {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+</style>
+
+</head>
+
+<body>
+    <header>
+      <h1>📄 Ce este HTML?</h1>
+      <div class="mode-toggle">
+        <button onclick="document.body.classList.toggle('dark-mode')">🌙 Schimbă tema</button>
+      </div>
+    </header>
+
+    <main>
+      <p><b>HTML</b> (HyperText Markup Language) este limbajul de bază folosit pentru a crea pagini web.</p>
+
+      <h2>📌 Elementele HTML</h2>
+      <p>HTML este format din <b>etichete</b> (tags), care indică browserului cum să afișeze conținutul. Fiecare etichetă are o formă generală:</p>
+      
+      <code>&lt;nume_eticheta&gt;Conținut&lt;/nume_eticheta&gt;</code>
+
+      <p> <b>Exemplu:</b></p>
+      <code>&lt;p&gt;Acesta este un paragraf.&lt;/p&gt;</code>
+
+      <h2>🔹 Etichete de bază</h2>
+      <ul>
+        <li><code>&lt;h1&gt; - &lt;h6&gt; | Titluri (de la cel mai mare la cel mai mic)</code> </li>
+        <li><code>&lt;p&gt; | Paragraf</code> </li>
+        <li><code>&lt;br&gt; | Linie nouă (fără etichetă de închidere)</code> </li>
+        <li><code>&lt;a&gt; | Link (ancoră)</code></li>
+        <li><code>&lt;img&gt; | Imagine</code></li>
+        <li><code>&lt;ul&gt; , &lt;ol&gt; , &lt;li&gt; | Liste</code></li>
+      </ul>
+
+      <h2>📖 Exemplu complet</h2>
+      <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Exemplu HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Salut!&lt;/h1&gt;
+    &lt;p&gt;Aceasta este prima mea pagină web.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+      </code>
+
+      <h2>🎯 Quiz HTML</h2>
+      <form id="quizHtml">
+        <p>1. Ce etichetă HTML este folosită pentru paragrafe?</p>
+        <select id="q1">
+          <option value="0">&lt;h1&gt;</option>
+          <option value="1">&lt;p&gt;</option>
+          <option value="0">&lt;br&gt;</option>
+        </select>
+
+        <p>2. Ce etichetă definește o imagine?</p>
+        <select id="q2">
+          <option value="1">&lt;img&gt;</option>
+          <option value="0">&lt;src&gt;</option>
+          <option value="0">&lt;pic&gt;</option>
+        </select>
+
+        <p>3. Care dintre următoarele este o listă ordonată?</p>
+        <select id="q3">
+          <option value="0">&lt;ul&gt;</option>
+          <option value="1">&lt;ol&gt;</option>
+          <option value="0">&lt;li&gt;</option>
+        </select>
+
+        <br><br>
+        <button type="button" onclick="verificaQuizHtml()">Verifică răspunsurile</button>
+        <button type="button" onclick="reseteazaQuiz()">Reset</button>
+        <p id="rezultatHtml" style="font-weight: bold;"></p>
+      </form>
+
+      <script>
+        function verificaQuizHtml() {
+          let scor = 0;
+          if (document.getElementById("q1").value === "1") scor++;
+          if (document.getElementById("q2").value === "1") scor++;
+          if (document.getElementById("q3").value === "1") scor++;
+
+          const rezultat = document.getElementById("rezultatHtml");
+          rezultat.classList.remove("animated-result");
+          void rezultat.offsetWidth;
+          rezultat.classList.add("animated-result");
+
+          let emoji = "";
+          if (scor === 3) emoji = "🎉";
+          else if (scor === 2) emoji = "👍";
+          else if (scor === 1) emoji = "🙂";
+          else emoji = "😕";
+
+          rezultat.innerText = `${emoji} Ai răspuns corect la ${scor}/3 întrebări.`;
+          rezultat.style.color = scor === 3 ? "green" : "orange";
+        }
+
+        function reseteazaQuiz() {
+          document.getElementById("q1").selectedIndex = 0;
+          document.getElementById("q2").selectedIndex = 0;
+          document.getElementById("q3").selectedIndex = 0;
+          const rezultat = document.getElementById("rezultatHtml");
+          rezultat.innerText = "";
+        }
+      </script>
+
+      <p style="text-align: center;"><a href="index.html">⬅ Înapoi la pagina principală</a></p>
+    </main>
+  </body>
+
+  <footer style="text-align: center; padding: 10px; background-color: #2c3e50; color: white;">
+    <p>&copy; 2025 Tutorial HTML & CSS made by Ruxandra Irimioiu</p>
+  </footer>

@@ -1,0 +1,80 @@
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Tutorial HTML & CSS</title>
+
+<style>
+      @keyframes glow {
+        0% { text-shadow: 0 0 5px #fff, 0 0 10px #2980b9; }
+        50% { text-shadow: 0 0 20px #fff, 0 0 30px #3498db; }
+        100% { text-shadow: 0 0 5px #fff, 0 0 10px #2980b9; }
+      }
+      .animated-title {
+        animation: glow 2s infinite;
+      }
+
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .fade-section {
+        animation: slideIn 1s ease-in-out forwards;
+      }
+
+      a:hover {
+        color: #1abc9c !important;
+        transition: color 0.3s ease;
+      }
+    </style>
+
+  </head>
+  
+  <body style="background-color: #f4f4f4; font-family: Arial, sans-serif; margin: 0; padding: 0;">
+    <header style="background-color: #2c3e50; padding: 20px; text-align: center; color: white;">
+      <h1 class="animated-title" style="margin: 0;">🌐 Bine ai venit la Tutorialul HTML & CSS 🌐</h1>
+    </header>
+
+    <main style="padding: 20px; max-width: 900px; margin: auto;">
+      <section class="fade-section" style="background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc;">
+        <p style="font-size: 18px;">Acest tutorial te va ajuta să înveți bazele HTML și CSS, cele două tehnologii fundamentale pentru crearea paginilor web.</p>
+
+        <hr>
+
+        <h2>📚 Cuprins</h2>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><a href="exemplu.html" style="text-decoration: none; color: #2980b9; font-weight: bold;">➡ Exemplu practic</a></li>
+          <li><a href="html.html" style="text-decoration: none; color: #2980b9; font-weight: bold;">➡ Ce este HTML?</a></li>
+          <li><a href="css.html" style="text-decoration: none; color: #2980b9; font-weight: bold;">➡ Ce este CSS?</a></li>
+        </ul>
+
+        <hr>
+
+        <h2>📝 Ce vei învăța?</h2>
+        <ul>
+          <li>Ce este și cum se scrie un document HTML</li>
+          <li>Ce sunt etichetele HTML și cum funcționează</li>
+          <li>Cum să structurezi o pagină web</li>
+          <li>Ce este CSS și cum poți adăuga stil unei pagini</li>
+        </ul>
+
+        <hr>
+
+        <h2>💡 De ce să înveți HTML și CSS?</h2>
+        <p>HTML și CSS sunt limbaje esențiale pentru oricine vrea să creeze un site web. Ele sunt ușor de învățat și foarte utile, indiferent dacă vrei să devii programator sau doar să-ți faci un site personal.</p>
+
+        <hr>
+
+        <h2>❓ Știați că...?</h2>
+        <ul>
+          <li>HTML înseamnă HyperText Markup Language.</li>
+          <li>CSS a fost creat pentru a separa conținutul de design.</li>
+          <li><a href="https://ro.wikipedia.org/wiki/Tim_Berners-Lee">Primul site web a fost creat în 1991 de Tim Berners-Lee.</a></li>
+          <li>Eticheta &lt;h1&gt; este cea mai importantă pentru titlul unei pagini.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer style="text-align: center; padding: 10px; background-color: #2c3e50; color: white;">
+      <p>&copy; 2025 Tutorial HTML & CSS made by Ruxandra Irimioiu</p>
+    </footer>
+  </body>

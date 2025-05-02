@@ -1,0 +1,146 @@
+    <header style="background-color: #2c3e50; margin: 0px; text-align: center; color: white;">
+ 
+    <meta charset="UTF-8">
+    <h1>🎨 Ce este CSS?</h1>
+  </header>
+
+  <body style="background-color: #f2f2f2; font-family: Arial, sans-serif">
+ <section style="background-color: #ffffff; padding: 15px; max-width: 900px; margin: auto; border-radius: 10px;">
+      <p><strong>CSS</strong> (Cascading Style Sheets) este un limbaj folosit pentru a stiliza paginile web scrise în HTML.</p>
+    </div>
+
+    <hr>
+
+    <h2>📌 De ce avem nevoie de CSS?</h2>
+      <p>HTML descrie structura unei pagini, dar nu și cum arată. CSS ne ajută să schimbăm:</p>
+      <ul>
+        <li>Culorile textului și fundalului</li>
+        <li>Fonturile și dimensiunile</li>
+        <li>Marginile și alinierea</li>
+        <li>Aspectul general al site-ului</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <h2>🔧 Sintaxa de bază</h2>
+      <p><strong>Exemplu de regulă CSS:</strong></p>
+      <code style="display: block; white-space: pre;">
+selector {
+  proprietate: valoare;
+}
+      </code>
+
+      <p><strong>Exemplu concret:</strong></p>
+      <code style="display: block; white-space: pre;">
+h1 {
+  color: blue;
+  text-align: center;
+}
+      </code>
+    </div>
+
+    <hr>
+
+    <h2>🧪 3 moduri de a folosi CSS</h2>
+    <ul>
+      <li><strong>CSS inline</strong> – <code>&lt;p style="color:red;"&gt;Text roșu&lt;/p&gt;</code></li>
+      <li><strong>CSS intern</strong> – în interiorul paginii, între <code>&lt;style&gt;</code> și <code>&lt;/style&gt;</code></li>
+      <li><strong>CSS extern</strong> – într-un fișier separat, conectat cu <code>&lt;link&gt;</code></li>
+    </ul>
+
+    <hr>
+
+    <h2>✨ Experimentează CSS!</h2>
+    <p>Scrie o culoare (ex: red, blue, green) și aplic-o pe textul de mai jos:</p>
+    <input type="text" id="culoare" placeholder="Ex: red">
+    <button onclick="schimbaCuloarea()">Aplică culoarea</button>
+    <p id="exemplu" style="font-weight: bold;">Acest text își va schimba culoarea!</p>
+
+    <script>
+      function schimbaCuloarea() {
+        var culoare = document.getElementById('culoare').value;
+        document.getElementById('exemplu').style.color = culoare;
+      }
+    </script>
+
+    <hr>
+
+    <h2>❓ Întrebări de verificare</h2>
+    <ul>
+      <li>Ce înseamnă CSS și la ce folosește?</li>
+      <li>Cum arată un exemplu de regulă CSS?</li>
+      <li>Care sunt cele trei moduri de a folosi CSS într-o pagină?</li>
+      <li>Ce diferență este între HTML și CSS?</li>
+    </ul>
+
+    <hr>
+
+    <h2>🧠 Quiz interactiv final</h2>
+    <form id="quizForm">
+      <p><strong>1. CSS este folosit pentru:</strong></p>
+      <select id="q1">
+        <option value="0">Crearea bazelor de date</option>
+        <option value="1">Stilizarea paginilor web</option>
+        <option value="0">Programare în C++</option>
+      </select>
+
+      <p><strong>2. Ce etichetă HTML se folosește pentru a adăuga un fișier CSS extern?</strong></p>
+      <select id="q2">
+        <option value="0">&lt;style&gt;</option>
+        <option value="1">&lt;link&gt;</option>
+        <option value="0">&lt;script&gt;</option>
+      </select>
+
+      <p><strong>3. Care proprietate CSS setează culoarea textului?</strong></p>
+      <select id="q3">
+        <option value="1">color</option>
+        <option value="0">font-size</option>
+        <option value="0">background</option>
+      </select>
+
+      <p><strong>4. Ce simbol se folosește pentru a scrie un comentariu în CSS?</strong></p>
+      <select id="q4">
+        <option value="0">// comentariu</option>
+        <option value="1">/* comentariu */</option>
+        <option value="0"><!-- comentariu --></option>
+      </select>
+
+      <br><br>
+      <button type="button" onclick="verificaQuizComplet()">Verifică răspunsurile</button>
+      <button type="button" onclick="reseteazaQuiz()">Reset</button>
+      <p id="rezultatQuiz" style="font-weight: bold;"></p>
+    </form>
+
+    <script>
+      function verificaQuizComplet() {
+        var scor = 0;
+        if (document.getElementById("q1").value === "1") scor++;
+        if (document.getElementById("q2").value === "1") scor++;
+        if (document.getElementById("q3").value === "1") scor++;
+        if (document.getElementById("q4").value === "1") scor++;
+
+        var mesaj = "Ai obtinut " + scor + "/4 raspunsuri corecte.";
+        document.getElementById("rezultatQuiz").innerText = mesaj;
+        document.getElementById("rezultatQuiz").style.color = scor === 4 ? "green" : "orange";
+      }
+
+
+      function reseteazaQuiz() {
+          document.getElementById("q1").selectedIndex = 0;
+          document.getElementById("q2").selectedIndex = 0;
+          document.getElementById("q3").selectedIndex = 0;
+          document.getElementById("q4").selectedIndex = 0;
+          const rezultat = document.getElementById("rezultatQuiz");
+          rezultat.innerText = "";
+      }
+    </script>
+
+    <hr>
+    <p style="text-align: center;"><a href="index.html">⬅ Înapoi la pagina principală</a></p>
+  </body>
+
+</section>
+  <footer style="text-align: center; padding: 10px; background-color: #2c3e50; color: white;">
+    <p>&copy; 2025 Tutorial HTML & CSS made by Ruxandra Irimioiu</p>
+  </footer>
